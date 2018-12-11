@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head runat="server">
+    <title>Master News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
+    <link href="StylesSheets/MasterPage%20StyleSheet.css" rel="stylesheet" />
+    <link href="StylesSheets/Log-InSign-UpForm.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <nav id="navigation">
+                <span class="logo">Master News<span>+</span></span>
+                <ul class="links">
+                    <li>
+
+
+                        <a href="#" id="HomeButton" onclick="HomeClick()">Home</a>
+                        <a href="#" id="IniciarButton" class="dropbtn" onclick="myFunction()">Iniciar sesion</a>
+
+
+                        <div id="Log-InSign-Up" class="dropdown-content">
+                            <div class="form-structor">
+                                <div class="signup">
+                                    <h2 class="form-title" id="signup"><span>O</span>Registrate</h2>
+                                    <div class="form-holder">
+                                        <asp:textbox runat="server" type="text" CssClass="input" placeholder="Name" />
+                                        <asp:textbox runat="server" type="email" CssClass="input" placeholder="Email" />
+                                        <asp:textbox runat="server" type="password" CssClass="input" placeholder="Password" />
+                                    </div>
+                                    <asp:button id=submitSign CssClass="submit-btn" runat="server" text="Registrate" ></asp:button>
+                                </div>
+                                <div class="login slide-up">
+                                    <div class="center">
+                                        <h2 class="form-title" id="login"><span>O</span>Ingresa</h2>
+                                        <div class="form-holder">
+                                            <asp:textbox runat="server" type="email" CssClass="input" placeholder="Email" />
+                                            <asp:textbox runat="server" type="password" CssClass="input" placeholder="Password" />
+                                        </div>
+                                        <asp:button id=submitLog CssClass="submit-btn" runat="server" text="Ingresa" ></asp:button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script>
+
+        /* When the user clicks on the button, 
+                toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("Log-InSign-Up").classList.toggle("show");
+        }
+
+        function HomeClick() {
+            document.location.href = './MainForm.aspx';
+        }
+
+
+        // Close the dropdown menu if the user clicks outside of it
+        // window.onclick = function (event) {
+        //     if (!event.target.matches('.dropbtn') /*|| !event.target.matches('.dropdown-content')*/) {
+        //         var dropdowns = document.getElementsByClassName("dropdown-content");
+        //         var i;
+        //         for (i = 0; i < dropdowns.length; i++) {
+        //             var openDropdown = dropdowns[i];
+        //             if (openDropdown.classList.contains('show')) {
+        //                 openDropdown.classList.remove('show');
+        //             }
+        //         }
+        //     }
+        // }
+
+        console.clear();
+
+        const loginBtn = document.getElementById('login');
+        const signupBtn = document.getElementById('signup');
+
+        loginBtn.addEventListener('click', (e) => {
+            let parent = e.target.parentNode.parentNode;
+            Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+                if (element !== "slide-up") {
+                    parent.classList.add('slide-up')
+                } else {
+                    signupBtn.parentNode.classList.add('slide-up')
+                    parent.classList.remove('slide-up')
+                }
+            });
+        });
+
+        signupBtn.addEventListener('click', (e) => {
+            let parent = e.target.parentNode;
+            Array.from(e.target.parentNode.classList).find((element) => {
+                if (element !== "slide-up") {
+                    parent.classList.add('slide-up')
+                } else {
+                    loginBtn.parentNode.parentNode.classList.add('slide-up')
+                    parent.classList.remove('slide-up')
+                }
+            });
+        });
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>
