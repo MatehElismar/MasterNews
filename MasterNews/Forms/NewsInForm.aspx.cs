@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaDatos;    
+
 
 public partial class Forms_NewsInForm : System.Web.UI.Page
 {
@@ -14,6 +16,12 @@ public partial class Forms_NewsInForm : System.Web.UI.Page
 
     protected void Unnamed1_TextChanged(object sender, EventArgs e)
     {
-        TextBox textBox = new TextBox();
+        var post = new Post();
+        post.title = tbTitle.Text;
+        post.review = tbReview.Text;
+        post.content = tbContenido.Text;
+
+        PostService.AddPost(post);
+        Response.Redirect("/");
     }
 }
