@@ -6,23 +6,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-
-    <div class="form-group">
-        <label for="title">Titulo</label>
-        <input type="text" name="title" id="title" class="form-control" aria-describedby="Misael me regalo 2 empanada" placeholder="Tema a tratar">
-        <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
+    <div class="div-principal">
+        <div class="form-group">
+            <label for="title">Titulo</label>
+            <aps:input type="text" name="title" id="title" CssClass="form-control" aria-describedby="Misael me regalo 2 empanada"
+                placeholder="Tema a tratar">
+            <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+            <label for="review">Descripcion Corta</label>
+            <aps:input type="text" name="review" id="review" CssClass="form-control" aria-describedby="Misael me regalo 2 empanada"
+                placeholder="Punto Clave y llamativo de la publicacion">
+            <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
+            <asp:textbox runat="Server" style="height: 200px; ">Contenido</asp:textbox>
+        </div>
+        <asp:linkbutton runat="Server" CssClass="btn btn-success">Publicar</asp:linkbutton>
     </div>
-    <div class="form-group">
-        <label for="review">Descripcion Corta</label>
-        <input type="text" name="review" id="review" class="form-control" aria-describedby="Misael me regalo 2 empanada" placeholder="Punto Clave y llamativo de la publicacion">
-        <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
-        <textarea style="width: 200px; ">Contenido</textarea>
-    </div>
-
-    <label>Contenido</label>
-    <div height="600px" id="froala-editor"></div>
-    <a class="btn btn-success" onclick="addPost()">Publicar</a>
 
 
 </asp:Content>
-

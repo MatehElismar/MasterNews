@@ -11,4 +11,9 @@ public partial class Forms_NewsInForm : System.Web.UI.Page
     {
 
     }
+
+    protected void Unnamed1_TextChanged(object sender, EventArgs e)
+    {
+        TextBox textBox = new TextBox();
+    }
 }
