@@ -41,20 +41,20 @@
                                 <div class="signup">
                                     <h2 class="form-title" id="signup"><span>O</span>Registrate</h2>
                                     <div class="form-holder">
-                                        <asp:textbox runat="server" type="text" CssClass="input" placeholder="Name" />
-                                        <asp:textbox runat="server" type="email" CssClass="input" placeholder="Email" />
-                                        <asp:textbox runat="server" type="password" CssClass="input" placeholder="Password" />
+                                        <asp:textbox id="name" runat="server" type="text" CssClass="input" placeholder="Name" />
+                                        <asp:textbox id="email" runat="server" type="email" CssClass="input" placeholder="Email" />
+                                        <asp:textbox id="password" runat="server" type="password" CssClass="input" placeholder="Password" />
                                     </div>
-                                    <asp:button id=submitSign CssClass="submit-btn" runat="server" text="Registrate" ></asp:button>
+                                    <asp:button OnClick="submitSign_Click" ID=submitSign CssClass="submit-btn" runat="server" text="Registrate" ></asp:button>
                                 </div>
                                 <div class="login slide-up">
                                     <div class="center">
                                         <h2 class="form-title" id="login"><span>O</span>Ingresa</h2>
                                         <div class="form-holder">
-                                            <asp:textbox runat="server" type="email" CssClass="input" placeholder="Email" />
-                                            <asp:textbox runat="server" type="password" CssClass="input" placeholder="Password" />
+                                            <asp:textbox id="email1" runat="server" type="email" CssClass="input" placeholder="Email" />
+                                            <asp:textbox id="password2" runat="server" type="password" CssClass="input" placeholder="Password" />
                                         </div>
-                                        <asp:button id=submitLog CssClass="submit-btn" runat="server" text="Ingresa" ></asp:button>
+                                        <asp:button OnClick="submitLog_Click" id=submitLog CssClass="submit-btn" runat="server" text="Ingresa" ></asp:button>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +66,10 @@
                 </ul>
             </nav>
         </header>
-
+        <div id="Mensaje" runat="server"></div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
             </asp:ContentPlaceHolder>
         </div>
     </form>
@@ -127,9 +128,8 @@
                     parent.classList.remove('slide-up')
                 }
             });
-        });
-
-
+        }); 
+       // document.querySelector("") 
     </script>
 
 </body>

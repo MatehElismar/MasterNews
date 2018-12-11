@@ -23,5 +23,10 @@
         <asp:Button Id="btnPublicar" runat="Server" CssClass="btn btn-success" OnClick="btnPublicar_Click" Text="Publicar"></asp:Button>
     </div>
 
+    <script> 
+        document.querySelector("#Mensaje").innerHTML = ("Inicie como administrador por favor");
+        document.querySelector("#tbTitle").
+    </script>
+    
 
 </asp:Content>

@@ -9,12 +9,8 @@
 
     <section class="ptb-30" style="margin-top:80px">
         <div class="container">
-            <div class="row">
-
-                <div class="col-md-12 col-lg-8">
-
-                    
-
+            <div class="row"> 
+                 <div class="col-md-12 col-lg-8"> 
                     <div class="p-30 mb-30 card-view">
                         <img src="images/slider-8-1200x600.jpg" alt="">
                         <h3 class="mt-30 mb-5"><a href="#"><b id="title" runat="server">Bahrain Grans Prix : Will Sebastian Vettel Regin in the Heart of the Dessert?</b></a></h3>
@@ -26,21 +22,7 @@
                         <p class="mt-30" id="content" runat="server">
                             
                         </p>
-
-                        <!-- <div class="sided-half">
-                            <ul class="s-left ptb-5 list-btn-semiwhite sided-sm-center">
-                                <li><a href="#">MULTIPURPOSE</a></li>
-                                <li><a href="#">FASHION</a></li>
-                                <li class="mr-0"><a href="#">BLOGS</a></li>
-                            </ul>
-                            <ul class="s-right sided-sm-center ptb-5 list-a-p-5 list-a-plr-10 font-11 color-ash">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-google"></i></a></li>
-                                <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        sided-half -->
+                        
                     </div>
                     <!-- card-view -->
 
