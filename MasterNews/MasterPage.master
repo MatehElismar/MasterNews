@@ -11,6 +11,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
     <link href="StylesSheets/MasterPage%20StyleSheet.css" rel="stylesheet" />
     <link href="StylesSheets/Log-InSign-UpForm.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- Stylesheets -->
+    <link href="plugin-frameworks/bootstrap.css" rel="stylesheet">
+    <link href="fonts/ionicons.css" rel="stylesheet">
+    <link href="common/styles.css" rel="stylesheet">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -20,7 +27,7 @@
 
         <header>
             <nav id="navigation">
-                <span class="logo">Master News<span>+</span></span>
+                <span class="logo">Master News <span>+</span></span>
                 <ul class="links">
                     <li>
 

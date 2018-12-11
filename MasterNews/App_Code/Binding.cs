@@ -15,7 +15,7 @@ public class Binding
 
     public static bool Add(string username, string desc)
     {
-        var c = new Server();
+        var c = new CapaDatos.Server();
         var p = new List<DbParameter>();
         p.Add(new DbParameter("Username", username));
         p.Add(new DbParameter("Description", desc));

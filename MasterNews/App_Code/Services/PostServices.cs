@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq; 
-using System.Web; 
+using System.Web;
+using CapaDatos; 
 /// <summary>
 /// Summary description for Binding
 /// </summary>
 
-public namespace CapaDatos
+namespace CapaDatos
 {
     public class PostService
     {
@@ -22,7 +23,7 @@ public namespace CapaDatos
             p.Add(new DbParameter("review", post.review));
             p.Add(new DbParameter("content", post.content)); 
             p.Add(new DbParameter("author", post.author)); 
-            p.Add(new DbParameter("datetimePosted", post.datetimePosted)); 
+            p.Add(new DbParameter("datetimePosted", DateTime.Now)); 
 
             return c.InsertOrUpdate("InsertPost", p);
         }
@@ -43,11 +44,29 @@ public namespace CapaDatos
 
         public static List<Post> GetLastPosts( ) 
         {
+            var c = new Server(); 
+            var reader = c.QueryList("GetLastPosts", null);
+            var l = new  List<Post>();
+            while (reader.Read())
+            {
+                var p = new Post();
+                p.title = reader["title"].ToString();
+                p.review = reader["review"].ToString();
+                p.content = reader["content"].ToString();
+                p.author = reader["author"].ToString();
+                p.datetimePosted = Convert.ToDateTime(reader["datetimePosted"]); 
+                l.Add(p); 
+            }
+            return l;
+        } 
+
+        public static Post GetPost(string Id) 
+        {
             var c = new Server();
-            var p = new List<DbParameter>();
-            p.Add(new DbParameter("Id", Convert.ToInt32(Id)));
-            var reader = c.QueryList("GetLastPosts", p);
-            var l = = new  List<Post>();
+            var s = new List<DbParameter>();
+            s.Add(new DbParameter("title", Id));
+            var reader = c.QueryList("GetPost", s); 
+            var p = new Post();
             if (reader.Read())
             {
                 p.title = reader["title"].ToString();
@@ -55,25 +74,8 @@ public namespace CapaDatos
                 p.content = reader["content"].ToString();
                 p.author = reader["author"].ToString();
                 p.datetimePosted = Convert.ToDateTime(reader["datetimePosted"]); 
-                l.Add(p);
-
             }
-            return l;
-        } 
-
-        public static string GetPost(string Id) 
-        {
-            var c = new Server();
-            var p = new List<DbParameter>();
-            p.Add(new DbParameter("Id", Convert.ToInt32(Id)));
-            var reader = c.QueryList("SearchComment", p);
-            var l = "Buscando"; 
-            if (reader.Read())
-            {
-                l = reader["Description"].ToString();
-
-            }
-            return l;
+            return p;
         } 
     }
 }

@@ -6,21 +6,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <div class="div-principal">
+    <div class="div-principal" style="margin-top: 80px;">
         <div class="form-group">
             <label for="title">Titulo</label>
-            <aps:textbox Id="tbTitle" type="text" name="title" id="title" CssClass="form-control" aria-describedby="Misael me regalo 2 empanada"
-                placeholder="Tema a tratar">
+            <asp:textbox runat="server" style="height: 40px;" Id="tbTitle" type="text" name="title" CssClass="form-control" aria-describedby="Misaaaaaaaa"
+                placeholder="La la lala la"/>
             <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
         </div>
         <div class="form-group">
             <label for="review">Descripcion Corta</label>
-            <aps:textbox Id="tbReview" type="text" name="review" id="review" CssClass="form-control" aria-describedby="Misael me regalo 2 empanada"
-                placeholder="Punto Clave y llamativo de la publicacion">
+            <asp:textbox runat="server" style="height: 50px;" Id="tbReview" type="text" name="review" CssClass="form-control" aria-describedby="Misaaaaaaaa"
+                placeholder="Punto Clave"/>
             <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
-            <asp:textbox Id="tbContenido" runat="Server" style="height: 200px; ">Contenido</asp:textbox>
+            <asp:textbox Id="tbContenido" runat="Server" style="height: 200px;" PlaceHolder="Contenido"></asp:textbox>
         </div>
-        <asp:linkbutton Id="btnPublicar" runat="Server" CssClass="btn btn-success">Publicar</asp:linkbutton>
+        <asp:Button Id="btnPublicar" runat="Server" CssClass="btn btn-success" OnClick="btnPublicar_Click" Text="Publicar"></asp:Button>
     </div>
 
 

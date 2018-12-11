@@ -12,11 +12,11 @@ namespace CapaDatos
 		 SqlConnection Conn;
          SqlCommand Cmd;
          SqlDataAdapter Adapter;
-         SqlDataReader Reader;
+         SqlDataReader Reader; 
 		
 		public Server()
 		{
-            Conn = new SqlConnection("Data Source=.;Initial Catalog=MEComents;Integrated Security=True");
+            Conn = new SqlConnection("Data Source=.;Initial Catalog=MasterNews;Integrated Security=True");
             Open();
 		}
 
