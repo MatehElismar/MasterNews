@@ -1,5 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %> 
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +7,7 @@
 <head runat="server">
     <title>Master News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
     <link href="StylesSheets/MasterPage%20StyleSheet.css" rel="stylesheet" />
     <link href="StylesSheets/Log-InSign-UpForm.css" rel="stylesheet" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,13 +26,14 @@
 
         <header>
             <nav id="navigation">
-                <span class="logo">Master News <span>+</span></span>
+                <span class="logo">Master News<span>+</span></span>
                 <ul class="links">
                     <li>
 
 
-                        <a href="#" id="HomeButton" onclick="HomeClick()">Home</a>
+                        <a href="#" id="HomeButton" onclick="Ho meClick()">Home</a>
                         <a href="#" id="IniciarButton" class="dropbtn" onclick="myFunction()">Iniciar sesion</a>
+                        <a href="#" runat="server" id="AdminButton"></a>
 
 
                         <div id="Log-InSign-Up" class="dropdown-content">
@@ -41,20 +41,20 @@
                                 <div class="signup">
                                     <h2 class="form-title" id="signup"><span>O</span>Registrate</h2>
                                     <div class="form-holder">
-                                        <asp:textbox id="name" runat="server" type="text" CssClass="input" placeholder="Name" />
-                                        <asp:textbox id="email" runat="server" type="email" CssClass="input" placeholder="Email" />
-                                        <asp:textbox id="password" runat="server" type="password" CssClass="input" placeholder="Password" />
+                                        <asp:TextBox ID="name" runat="server" type="text" CssClass="input" placeholder="Name" />
+                                        <asp:TextBox ID="email" runat="server" type="email" CssClass="input" placeholder="Email" />
+                                        <asp:TextBox ID="password" runat="server" type="password" CssClass="input" placeholder="Password" />
                                     </div>
-                                    <asp:button OnClick="submitSign_Click" ID=submitSign CssClass="submit-btn" runat="server" text="Registrate" ></asp:button>
+                                    <asp:Button  OnClick="submitSign_Click" ID="submitSign" CssClass="submit-btn" runat="server" Text="Registrate"></asp:Button>
                                 </div>
                                 <div class="login slide-up">
                                     <div class="center">
                                         <h2 class="form-title" id="login"><span>O</span>Ingresa</h2>
                                         <div class="form-holder">
-                                            <asp:textbox id="email1" runat="server" type="email" CssClass="input" placeholder="Email" />
-                                            <asp:textbox id="password2" runat="server" type="password" CssClass="input" placeholder="Password" />
+                                            <asp:TextBox ID="email1" runat="server" type="email" CssClass="input" placeholder="Email" />
+                                            <asp:TextBox ID="password2" runat="server" type="password" CssClass="input" placeholder="Password" />
                                         </div>
-                                        <asp:button OnClick="submitLog_Click" id=submitLog CssClass="submit-btn" runat="server" text="Ingresa" ></asp:button>
+                                        <asp:Button  OnClick="submitLog_Click" ID="submitLog" CssClass="submit-btn" runat="server" Text="Ingresa"></asp:Button>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,6 @@
         <div id="Mensaje" runat="server"></div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                
             </asp:ContentPlaceHolder>
         </div>
     </form>
@@ -83,7 +82,11 @@
         }
 
         function HomeClick() {
-            document.location.href = './MainForm.aspx';
+            document.location.href = 'C:\Users\misa1\Documents\Mio\Tareas\2.Programacion III\MasterNews\MasterNews\Forms\MainForm.aspx';
+        }
+
+        function Admin() {
+            document.location.href = 'C:\Users\misa1\Documents\Mio\Tareas\2.Programacion III\MasterNews\MasterNews\Forms\NewsInForm.aspx';
         }
 
 
@@ -128,7 +131,7 @@
                     parent.classList.remove('slide-up')
                 }
             });
-        }); 
+        });
        // document.querySelector("") 
     </script>
 

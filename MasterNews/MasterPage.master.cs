@@ -10,32 +10,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       // Mensaje.InnerHtml = "Inicie como administrador por favor";
-       // name.Enabled = false;
-        //email.Enabled = false;
-        //password.Enabled = false; 
-    }
+         
+    }  
 
-    protected void submitSign_Click(object sender, EventArgs e)
-    {
-        var user = new User();
-        user.name = name.Text;
-        user.email = email.Text;
-        user.pass = password.Text;
-        AccountService.Register(user);
-        if (AccountService.Login(user.email, user.pass))
-        {
-            Mensaje.InnerHtml = "Feliz viaje";
-            name.Enabled = true;
-            email.Enabled = true;
-            password.Enabled = true;
-        }
-    }
+
 
     protected void submitLog_Click(object sender, EventArgs e)
     {
         if (AccountService.Login(email1.Text, password2.Text))
         {
+            if (AccountService.Login(email1.Text = "Admin@Admin.com", password2.Text = "Admin"))
+            {
+                //AdminButton.Attributes["style="] = "visibility:visible";
+                AdminButton.InnerHtml = "Administrar";
+            }
             //Do something
             Mensaje.InnerHtml = "Feliz viaje";
             name.Enabled = true;
@@ -45,11 +33,24 @@ public partial class MasterPage : System.Web.UI.MasterPage
         else
         {
             //Don't do that
+            //MessageBox.Show("Cuenta no existe o tiene algun dato erroneo.");
+            // Response.Write("<script>alert('Cuenta no existe o tiene algun dato erroneo.')</script>");
         }
     }
 
-    public void CallOnAdminEvent()
+    protected void submitSign_Click(object sender, EventArgs e)
     {
-
+        var user = new User();
+        user.Name = name.Text;
+        user.Email = email.Text;
+        user.Pass = password.Text;
+        AccountService.Register(user);
+        if (AccountService.Login(user.Email, user.Pass))
+        {
+            Mensaje.InnerHtml = "Feliz viaje";
+            name.Enabled = true;
+            email.Enabled = true;
+            password.Enabled = true;
+        }
     }
 }

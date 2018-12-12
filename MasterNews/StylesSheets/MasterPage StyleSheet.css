@@ -47,7 +47,7 @@ nav {
         /* background-repeat: no-repeat; */
         background-attachment: scroll;
         background-size: cover;
-        letter-spacing: 5px;
+        letter-spacing: 1px;
     }
 
         nav .logo span {

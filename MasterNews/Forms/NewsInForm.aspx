@@ -9,23 +9,21 @@
     <div class="div-principal" style="margin-top: 80px;">
         <div class="form-group">
             <label for="title">Titulo</label>
-            <asp:textbox runat="server" style="height: 40px;" Id="tbTitle" type="text" name="title" CssClass="form-control" aria-describedby="Misaaaaaaaa"
-                placeholder="La la lala la"/>
+            <asp:textbox runat="server" style="height: 40px;" Id="tbTitle" CssClass="form-control" />
             <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
         </div>
         <div class="form-group">
             <label for="review">Descripcion Corta</label>
-            <asp:textbox runat="server" style="height: 50px;" Id="tbReview" type="text" name="review" CssClass="form-control" aria-describedby="Misaaaaaaaa"
-                placeholder="Punto Clave"/>
+            <asp:textbox runat="server" style="height: 50px;" Id="tbReview" CssClass="form-control" />
             <!-- <small name="titleHelp" id="titleHelp" class="form-text text-muted">We'll never share your title with anyone else.</small> -->
-            <asp:textbox Id="tbContenido" runat="Server" style="height: 200px;" PlaceHolder="Contenido"></asp:textbox>
+            <asp:textbox Id="tbContenido" runat="Server" style="height: 200px;" TextMode="MultiLine" Wrap="False"></asp:textbox>
         </div>
         <asp:Button Id="btnPublicar" runat="Server" CssClass="btn btn-success" OnClick="btnPublicar_Click" Text="Publicar"></asp:Button>
     </div>
 
     <script> 
         document.querySelector("#Mensaje").innerHTML = ("Inicie como administrador por favor");
-        document.querySelector("#tbTitle").
+        document.querySelector("#tbTitle")
     </script>
     
 

@@ -15,23 +15,23 @@ namespace CapaDatos
         { 
         }
 
-        public static bool Register(User user)
+        public static bool Register(User User)
         {
             var c = new Server();
             var p = new List<DbParameter>();
-            p.Add(new DbParameter("email", user.email));
-            p.Add(new DbParameter("name", user.name));
-            p.Add(new DbParameter("pass", user.pass));  
+            p.Add(new DbParameter("email", User.Email));
+            p.Add(new DbParameter("name", User.Name));
+            p.Add(new DbParameter("pass", User.Pass));  
 
             return c.InsertOrUpdate("InserUser", p);
         } 
 
-        public static bool Login(string email, string pass)
+        public static bool Login(string Email, string Pass)
         {
             var c = new Server();
             var p = new List<DbParameter>();
-            p.Add(new DbParameter("email", email)); 
-            p.Add(new DbParameter("pass", pass));  
+            p.Add(new DbParameter("email", Email)); 
+            p.Add(new DbParameter("pass", Pass));  
 
             var reader = c.QueryList("login", p);
             if(reader.Read())
